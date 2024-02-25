@@ -67,15 +67,15 @@ int EXECUTAR(int program[], int dados[]){
     int i = 0;
     do
     {
-        switch (program[i])
-        {
-        case /* constant-expression */:
-            /* code */
-            break;
+        // switch (program[i])
+        // {
+        // case /* constant-expression */
+        //     /* code */
+        //     break;
         
-        default:
-            break;
-        }
+        // default:
+        //     break;
+        // }
     } while (i < 255);
     
 }
