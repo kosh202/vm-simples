@@ -15,69 +15,75 @@
 #ifndef FUNCOES_H
 #define FUNCOES_H
 
-int NOP(int program[], int index){
-    return program[index] = 0;
-}
+#include <stdio.h>
 
-int STA(int program[], int index){
-    return program[index] = 16;
-}
+int tamanho = 255;
 
-int LDA(int program[], int index){
-    return program[index] = 32;
-}
-
-int ADD(int program[], int index){
-    return program[index] = 48;
-}
-
-int OR(int program[], int index){
-    return program[index] = 64;
-}
-
-int AND(int program[], int index){
-    return program[index] = 80;
-}
-
-int NOT(int program[], int index){
-    return program[index] = 96;
-}
-
-int JMP(int program[], int index){
-    return program[index] = 128;
-}
-
-int JN(int program[], int index){
-    return program[index] = 144;
-}
-
-int JZ(int program[], int index){
-    return program[index] = 160;
-}
-
-int HLT(int program[], int index){
-    return program[index] = 240;
-}
-
-int guardarDados(int dados[], int index, int valor){
-    return dados[index] = valor;
-}
-
-int EXECUTAR(int program[], int dados[]){
-    int i = 0;
-    do
+static void zerar(int dados[])
+{
+    for (int i = 0; i < 255; i++)
     {
-        // switch (program[i])
-        // {
-        // case /* constant-expression */
-        //     /* code */
-        //     break;
-        
-        // default:
-        //     break;
-        // }
-    } while (i < 255);
-    
+        dados[i] = 9;
+    }
 }
 
-#endif /* FUNCOES_H */
+// pega um valor do terminal
+static int pegarValor(int i)
+{
+    printf("end: ");
+    int verificar = scanf("%d", &i);
+    while ((verificar != 1))
+    {
+        while (getchar() != '\n')
+            ;                                                                  // limpar o buffer
+        printf("Erro de entrada. Por favor, insira um número válido.\nend: "); // reincerir numero
+        verificar = scanf("end: %d", &i);
+    }
+    return i;
+}
+
+static void test(int dados[])
+{
+    for (int j = 0; j <= 255; j++)
+    {
+        printf("%d, ", dados[j]);
+    }
+    printf("\n");
+}
+
+static void NOP(int dado[], int i)
+{
+    dado[i] = 0;
+}
+
+static void STA(int dado[], int indice)
+{ // armazenar no acumulador
+    dado[indice] = 16;
+    printf("end: ");
+    int verificar = scanf("%d", &dado[indice + 1]);
+    while (verificar != 1)
+    {
+        while (getchar() != '\n')
+            ;                                                                  // limpar o buffer
+        printf("Erro de entrada. Por favor, insira um número válido.\nend: "); // reincerir numero
+        verificar = scanf("%d", &dado[indice + 1]);
+    }
+}
+
+static void LDA(int dado[], int indice)
+{
+    dado[indice] = 32;
+    printf("end: ");
+    int verificar = scanf("%d", &dado[indice + 1]);
+    while (verificar != 1)
+    {
+        while (getchar() != '\n')
+            ;                                                                  // limpar o buffer
+        printf("Erro de entrada. Por favor, insira um número válido.\nend: "); // reincerir numero
+        verificar = scanf("%d", &dado[indice + 1]);
+    }
+}
+
+// Defina protótipos de outras funções do Neander aqui, se necessário
+
+#endif /* NEANDER_FUNCTIONS_H */
