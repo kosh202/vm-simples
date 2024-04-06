@@ -7,7 +7,7 @@
 
 int main() {
     int i, PC, AC = 0;
-    // lerArquivo(i, PC, AC);
-    test();
+    lerArquivo(i, PC, AC);
+
     return 0;
 }

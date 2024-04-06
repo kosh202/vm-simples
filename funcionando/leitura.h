@@ -9,39 +9,11 @@
 #include <fstream>
 #include <vector>
 
-void lerArquivo(int indice, int AC, int PC) {
-    std::ifstream arquivo("entrada.txt"); // Abre o arquivo "dados.txt" para leitura
-    if (!arquivo) { // Verifica se o arquivo foi aberto com sucesso
-        std::cerr << "Erro ao abrir o arquivo." << std::endl;
-    }
-
-    int primeiroNumero, segundoNumero, terceiroNumero;
-    std::vector<int> numerosTerceiro; // Vetor para armazenar os terceiros números
-
-    while (arquivo >> primeiroNumero >> segundoNumero) { // Lê os dois primeiros números de cada linha
-        if (segundoNumero == 32) { // Se o segundo número for 32, leia o terceiro número
-            if (!(arquivo >> terceiroNumero)) { // Lê o terceiro número
-                std::cerr << "Erro ao ler o terceiro número." << std::endl;
-            }
-            numerosTerceiro.push_back(terceiroNumero); // Armazena o terceiro número no vetor
-        }
-    }
-
-    // Exemplo de uso dos números lidos
-    std::cout << "Primeiro número: " << primeiroNumero << std::endl;
-    std::cout << "Segundo número: " << segundoNumero << std::endl;
-    for (int num : numerosTerceiro) {
-        std::cout << "Terceiro número: " << num << std::endl;
-    }
-
-    arquivo.close(); // Fecha o arquivo
-}
-
-int test() {
+void lerArquivo(int i, int PC, int AC) {
      FILE *arquivo = fopen("../entrada.txt", "r"); // Abre o arquivo "dados.txt" para leitura
     if (!arquivo) { // Verifica se o arquivo foi aberto com sucesso
         fprintf(stderr, "Erro ao abrir o arquivo.\n");
-        return 1;
+        // return 1;
     }
 
     int primeiroNumero, segundoNumero, terceiroNumero;
@@ -60,7 +32,7 @@ int test() {
     }
 
     fclose(arquivo); // Fecha o arquivo
-    return 0;
+    // return 0;
 }
 
 #endif 
