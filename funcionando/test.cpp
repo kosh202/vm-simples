@@ -6,8 +6,11 @@
 
 
 int main() {
-    int i, PC, AC = 0;
-    lerArquivo(i, PC, AC);
+    double i, PC, AC = 0;
+    // lerArquivo(i, PC, AC);
+    // int bin = decimalParaBinario(3);
+    // int dec = binarioParaDecimal(bin);
+    // printf("%d: %d",bin, dec);
 
     return 0;
 }
