@@ -2,7 +2,7 @@
 00	  NOP   	     Nenhuma operação
 16	  STA    end	 Armazena acumulador no endereço “end” da memória
 32	  LDA    end	 Carrega o acumulador com o conteúdo do endereço “end” da memória
-48	  ADD    end	 Soma o conteúdo do endereço “end” da memória ao acumulador
+48	  ADD    end	 Soma o conteúdo dSTAo endereço “end” da memória ao acumulador
 64	  OR     end	 Efetua operação lógica “OU” do conteúdo do endereço “end” da memória ao acumulador
 80	  AND    end	 Efetua operação lógica “E” do conteúdo do endereço “end” da memória ao acumulador
 96	  NOT   	     Inverte todos os bits do acumulador

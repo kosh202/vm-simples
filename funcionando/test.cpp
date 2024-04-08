@@ -8,9 +8,11 @@
 int main() {
     double i, PC, AC = 0;
     // lerArquivo(i, PC, AC);
+      int bin = decimalParaBinario(3);
     // int bin = decimalParaBinario(3);
     // int dec = binarioParaDecimal(bin);
-    // printf("%d: %d",bin, dec);
+    printf("%d\n",bin);
+
 
     return 0;
 }
