@@ -68,28 +68,28 @@ void OR(int PC, int AC, int end, int indice, int memoria[]){
         binario1 /= 10;
         binario2 /= 10;
         expoente++;
-    }
-    printf("%d", resultado);
-    
+    }  
+    indice+=2;
 
 }
-// Função para fazer a operação lógica OR entre dois números binários
-// int ORBinario(int binario1, int binario2) {
-//     int resultado = 0;
-//     int expoente = 0;
-    
-//     while (binario1 > 0 || binario2 > 0) {
-//         int bit1 = binario1 % 10;
-//         int bit2 = binario2 % 10;
-//         int bitResultado = (bit1 == 1 || bit2 == 1) ? 1 : 0;
-//         resultado += bitResultado * std::pow(10, expoente);
-//         binario1 /= 10;
-//         binario2 /= 10;
-//         expoente++;
-//     }
-    
-//     return resultado;
-// }
+
+void AND(int PC, int AC, int end, int indice, int memoria[]) {
+    int resultado = 0;
+    int expoente = 0;
+    int binario1 = decimalParaBinario(AC);
+    int binario2 = decimalParaBinario(memoria[end]);
+
+    while (binario1 > 0 && binario2 > 0) {
+        int bit1 = binario1 % 10;
+        int bit2 = binario2 % 10;
+        int bitResultado = (bit1 == 1 && bit2 == 1) ? 1 : 0;
+        resultado += bitResultado * std::pow(10, expoente);
+        binario1 /= 10;
+        binario2 /= 10;
+        expoente++;
+    }
+    indice+=2;
+}
 
 //leitura do arquivo depois implemntar as fuções para rodar o neader
 void lerArquivo(int i, int PC, int AC) {

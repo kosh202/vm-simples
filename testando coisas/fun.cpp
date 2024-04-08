@@ -34,6 +34,23 @@ int ORBinario(int binario1, int binario2) {
     return resultado;
 }
 
+int ANDBinario(int binario1, int binario2) {
+    int resultado = 0;
+    int expoente = 0;
+    
+    while (binario1 > 0 && binario2 > 0) {
+        int bit1 = binario1 % 10;
+        int bit2 = binario2 % 10;
+        int bitResultado = (bit1 == 1 && bit2 == 1) ? 1 : 0;
+        resultado += bitResultado * std::pow(10, expoente);
+        binario1 /= 10;
+        binario2 /= 10;
+        expoente++;
+    }
+    
+    return resultado;
+}
+
 int main() {
     int decimal1 = 9;  // 1001 em binário
     int decimal2 = 3;  // 0011 em binário
@@ -44,6 +61,7 @@ int main() {
 
     // Fazendo a operação lógica OR entre os números binários
     int resultado = ORBinario(binario1, binario2);
+    int resultadoAND = ANDBinario(binario1, binario2);
     
     // Exibindo o resultado
     std::cout << "Resultado: " << resultado << std::endl;
