@@ -36,7 +36,7 @@ int binarioParaDecimal(long long binario) {
 
 //end é o terceiro numero que o ler arquivo pega
 void NOP(int &PC, int &AC){
-    PC ++;
+    PC++;
 };
 
 void STA(int &PC, int &AC, int memoria[]){
@@ -123,7 +123,7 @@ void JMP(int &PC, int memoria[]) {
 // Função para o salto condicional se o AC for negativo (JN)
 void JN(int &PC, int &AC, int memoria[]) {
     if (AC < 0) {
-        memoria[PC+1]; // Retorna o endereço para onde o PC deve ser pulado se AC for negativo
+        PC = memoria[PC+1]; // Retorna o endereço para onde o PC deve ser pulado se AC for negativo
     } else {
         PC += 2; // Retorna o próximo endereço se AC for positivo ou zero
     }
@@ -139,7 +139,8 @@ void JZ(int &PC, int &AC, int memoria[]) {
 }
 
 // Função para a instrução HLT (halt)
-int HLT() {
+int HLT(int &PC) {
+    PC++;
     return -1; // Retorna -1 para indicar que o programa deve ser interrompido
 }
 
@@ -180,9 +181,10 @@ void lerArquivo(int instrucoes[]) {
 
 void rodar(int array[], int &PC, int &AC){
 
-    while (array[PC] != 240)
+    while (array[PC] != 240 && PC < 255-1)
+
     {
-        printf("PC: %d\n AC: %d\n", PC, AC);
+        printf("\nPC: %d\n AC: %d", PC, AC);
 
         switch(array[PC]) {
         case 0:
@@ -216,11 +218,11 @@ void rodar(int array[], int &PC, int &AC){
             JZ(PC,AC,array);
             break;
         case 240:
-            HLT();
-            PC++;
+            HLT(PC);
             break;
         default:
-            printf("instrucao invalida");
+            // printf("instrucao invalida");
+            PC++;
             break;
             // code block
         }

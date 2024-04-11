@@ -32,7 +32,9 @@ int main() {
     lerArray(instrucoes);
     
     rodar(instrucoes,PC,AC);
-    printf("PC: %d\nAC: %d", PC, AC);
+    PC++;
+    printf("PC: %d\n AC: %d\n", PC, AC);
+
 
     
 
