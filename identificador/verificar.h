@@ -45,6 +45,7 @@ int extrairNumeros(char arrChar[], int arrInt[]) {
 
 static void operacao(char palavra[], char operacao) {
   char local[100];
+  limpar(local);
   int indices[100];
   int index = 0;
   for (int i = 0; i < 100; i++) {

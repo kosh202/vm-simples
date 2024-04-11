@@ -14,7 +14,7 @@ int main() {
   // int quantNum = N(meuArray, num);
   int index = extrairNumeros(meuArray, num);
   prin(num, index);
-  // operacao(meuArray, '*');//mostrando no print e tem guardado nas posicoes do array
+  operacao(meuArray, '*');//mostrando no print e tem guardado nas posicoes do array
   // operacao(meuArray, '/');
   // operacao(meuArray, '+');
   // operacao(meuArray, '-');
