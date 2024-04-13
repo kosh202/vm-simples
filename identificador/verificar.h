@@ -5,6 +5,35 @@
 #include <iostream>
 // #include <ctype.h>
 
+void lerArquivoTexto(char conteudo[]) {
+    FILE* arquivo = fopen("equacao.txt", "r");
+    if (arquivo == NULL) {
+        printf("Erro ao abrir o arquivo %s\n", "equacao.txt");
+        // return NULL;
+        conteudo[100] = '\0';
+    }
+
+    // Aloca memória para armazenar o conteúdo do arquivo
+    
+    if (conteudo == NULL) {
+        printf("Erro de alocação de memória\n");
+        fclose(arquivo);
+        // return NULL;
+        conteudo[100] = '\0';
+    }
+
+    // Lê o conteúdo do arquivo caractere por caractere
+    int pos = 0;
+    int caractere;
+    while ((caractere = fgetc(arquivo)) != EOF && pos < 100 - 1) {
+        conteudo[pos++] = (char)caractere;
+    }
+    conteudo[pos] = '\0'; // Adiciona o terminador de string
+
+    fclose(arquivo);
+    
+}
+
 void prin(int num[], int tamanho){
   for (int i = 0; i < tamanho; i++)
   {

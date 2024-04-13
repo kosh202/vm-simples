@@ -3,7 +3,9 @@
 
 int main() {
     // Definição do array de char
-    char meuArray[100] = "5+2"; 
+    // char meuArray[100] = "5+2"; 
+    char meuArray[100]="";
+    lerArquivoTexto(meuArray);
     int num[100];
     int instrucoes[255];
     int numInt= 0;
